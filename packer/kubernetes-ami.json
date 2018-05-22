@@ -51,7 +51,7 @@
         "git clone --depth 1 https://github.com/Balanc3-Consensys/docker-kubernetes-master.git",
         "cd docker-kubernetes-master && ./build",
         "cd ~root",
-        "git clone --depth 1 https://github.com/mingfang/docker-kubernetes-node.git",
+        "git clone --depth 1 https://github.com/Balanc3-Consensys/docker-kubernetes-node.git",
         "cd docker-kubernetes-node && ./build"
       ]
     }
