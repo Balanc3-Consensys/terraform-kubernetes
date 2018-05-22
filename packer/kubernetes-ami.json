@@ -48,7 +48,7 @@
         "apt-get install -y docker-ce",
         "apt-get install -y ncdu dnsutils telnet htop sysstat curl jq bridge-utils ntp git nfs-common tree ubuntu-fan",
         "cd ~root",
-        "git clone --depth 1 https://github.com/mingfang/docker-kubernetes-master.git",
+        "git clone --depth 1 https://github.com/Balanc3-Consensys/docker-kubernetes-master.git",
         "cd docker-kubernetes-master && ./build",
         "cd ~root",
         "git clone --depth 1 https://github.com/mingfang/docker-kubernetes-node.git",
