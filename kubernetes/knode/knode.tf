@@ -136,15 +136,16 @@ resource "aws_launch_configuration" "lc" {
 }
 
 resource "aws_autoscaling_group" "asg" {
-  count                = "${var.size > 0 ? 1: 0}"
-  name_prefix          = "${var.name}-"
-  desired_capacity     = "${var.size}"
-  min_size             = "${var.size}"
-  max_size             = "${var.size}"
-  default_cooldown     = 60
-  launch_configuration = "${aws_launch_configuration.lc.name}"
-  vpc_zone_identifier  = ["${module.subnets.ids}"]
-  target_group_arns    = ["${module.alb.target_group_arns}"]
+  protect_from_scale_in = true
+  count                 = "${var.size > 0 ? 1: 0}"
+  name_prefix           = "${var.name}-"
+  desired_capacity      = "${var.size}"
+  min_size              = "${var.size}"
+  max_size              = "${var.size}"
+  default_cooldown      = 60
+  launch_configuration  = "${aws_launch_configuration.lc.name}"
+  vpc_zone_identifier   = ["${module.subnets.ids}"]
+  target_group_arns     = ["${module.alb.target_group_arns}"]
 
   tag {
     key                 = "Name"

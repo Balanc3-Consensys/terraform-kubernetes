@@ -284,6 +284,7 @@ resource "aws_launch_configuration" "lc" {
 }
 
 resource "aws_autoscaling_group" "asg" {
+  protect_from_scale_in     = true
   name_prefix               = "${var.name}-"
   desired_capacity          = 1
   min_size                  = 1
